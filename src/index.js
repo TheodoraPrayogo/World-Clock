@@ -27,3 +27,20 @@ sydneyTimeElement.innerHTML = sydneyTime.format(
 }
 
 setInterval(updateSydneyTime,1000);
+
+function updateHoustonTime() {
+  //Houston
+
+  let houstonElement = document.querySelector("#houston");
+  let houstonDateElement = houstonElement.querySelector(".date");
+  let houstonTimeElement = houstonElement.querySelector(".time");
+  let houstonTime = moment().tz("US/Pacific-New");
+
+  houstonDateElement.innerHTML = houstonTime.format("MMMM Do, YYYY");
+  houstonTimeElement.innerHTML = houstonTime.format(
+    "h:mm:ss [<small>]A[<small>]"
+  );
+}
+
+setInterval(updateHoustonTime, 1000);
+
